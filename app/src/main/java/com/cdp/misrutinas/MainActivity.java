@@ -19,4 +19,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void btnMainRegister(View view){
+        Intent intent=new Intent(MainActivity.this,RegistroActivity.class);
+        startActivity(intent);
+    }
+
 }
