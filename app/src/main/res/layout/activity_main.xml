@@ -33,10 +33,12 @@ tools:context=".IniciarSesionActivity">
             android:id="@+id/btnMainLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingresar"
-            android:textColor="@color/background"
             android:layout_marginBottom="12dp"
-            />
+            android:background="@drawable/button_desg"
+            android:onClick="btnMainLogin"
+            android:text="Ingresar"
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnMainRegister"
