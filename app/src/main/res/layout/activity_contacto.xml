@@ -8,7 +8,7 @@
     tools:context=".ContactoActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnContacto"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
@@ -76,7 +76,7 @@
     <EditText
         android:id="@+id/editTextMensaje"
         android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_height="130dp"
         android:background="#E1E1F6"
         android:ems="10"
         android:hint="@string/inputTextArea"
@@ -98,41 +98,68 @@
         android:layout_height="56dp"
         android:layout_marginTop="28dp"
         android:text="@string/h2Contacto"
-        android:textColor="#FF8E28"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewContacto" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:srcCompat="@android:drawable/ic_menu_call" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
     <View
         android:id="@+id/divider"
         android:layout_width="300dp"
         android:layout_height="2dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="56dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="@+id/btnContacto" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="38dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
+        app:layout_constraintVertical_bias="0.051"
+        app:srcCompat="@drawable/icon_instagram"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="38dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
+        app:layout_constraintVertical_bias="0.051"
+        app:srcCompat="@drawable/icon_github" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="38dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_whatsapp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="38dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/phone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
