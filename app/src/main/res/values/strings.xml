@@ -9,4 +9,8 @@
     <string name="inputTextArea">Mensaje (maximo 200 caracteres)</string>
     <string name="btnEnviar">Enviar</string>
 
+    <!-- Login -->
+    <string name="inputUsuario">Usuario</string>
+    <string name="inputContraseña">Contraseña</string>
+
 </resources>
