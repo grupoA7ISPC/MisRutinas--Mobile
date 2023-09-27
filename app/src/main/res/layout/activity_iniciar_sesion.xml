@@ -8,31 +8,31 @@
     tools:context=".IniciarSesionActivity">
 
     <ImageView
-        android:id="@+id/volver_cono"
-        android:src="@mipmap/flecha_volver"
+        android:id="@+id/volver_login"
         android:layout_width="16.03dp"
         android:layout_height="23dp"
         android:layout_marginLeft="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="21dp"
-        />
+        android:onClick="btnVolverLogin"
+        android:src="@mipmap/flecha_volver"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
         android:id="@+id/btnIngresar"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
-
         android:layout_marginLeft="115dp"
         android:layout_marginTop="291dp"
-        android:backgroundTint="#FF6005"
+        android:background="@drawable/button_primary"
         android:onClick="btnIngresar"
         android:text="Ingresar"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:backgroundTint="@null"/>
 
     <TextView
         android:id="@+id/textViewLogin"
@@ -54,16 +54,16 @@
     <EditText
         android:id="@+id/editTextUsuario"
         android:layout_width="match_parent"
-        android:layout_height="39dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#E1E1F6"
         android:clipToOutline="true"
         android:ems="10"
         android:hint="@string/inputUsuario"
         android:inputType="text"
         android:textAlignment="center"
         android:visibility="visible"
+        android:background="@drawable/input_generico"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="148dp"
@@ -72,15 +72,15 @@
     <EditText
         android:id="@+id/editTextContraseña"
         android:layout_width="match_parent"
-        android:layout_height="39dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#E1E1F6"
         android:ems="10"
         android:hint="@string/inputContraseña"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:visibility="visible"
+        android:background="@drawable/input_generico"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="221dp"/>

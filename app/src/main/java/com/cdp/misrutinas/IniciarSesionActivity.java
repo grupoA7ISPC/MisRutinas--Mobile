@@ -17,4 +17,9 @@ public class IniciarSesionActivity extends AppCompatActivity {
         Intent intent=new Intent(IniciarSesionActivity.this,DashboardActivity.class);
         startActivity(intent);
     }
+
+    public void btnVolverLogin(View view){
+        Intent intent=new Intent(IniciarSesionActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
 }
