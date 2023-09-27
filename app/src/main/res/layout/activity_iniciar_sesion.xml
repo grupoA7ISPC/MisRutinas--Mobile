@@ -27,6 +27,7 @@
         android:layout_marginLeft="115dp"
         android:layout_marginTop="291dp"
         android:backgroundTint="#FF6005"
+        android:onClick="btnIngresar"
         android:text="Ingresar"
         android:textSize="16sp"
         android:textStyle="bold"
