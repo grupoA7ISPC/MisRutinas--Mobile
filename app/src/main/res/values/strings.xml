@@ -13,4 +13,5 @@
     <string name="inputUsuario">Usuario</string>
     <string name="inputContraseña">Contraseña</string>
 
+    <string name="username">@Username</string>
 </resources>
