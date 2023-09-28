@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginBottom="20dp"
-            android:background="transparent"
+            android:background="@android:color/transparent"
             android:padding="0dp"
             android:text="Cerrar sesión"
             android:textColor="@color/gris" />
