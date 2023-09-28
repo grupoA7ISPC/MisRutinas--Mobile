@@ -4,15 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:clipChildren="true"
     tools:context=".RegistroActivity">
 
-    <TextView
-        android:id="@+id/tvRegistroText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity Registro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="288dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/inputs"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Nombre"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="288dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/inputs"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Apellido"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="288dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/inputs"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Nombre de Usuario"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="288dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/inputs"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="288dp"
+        android:layout_height="39dp"
+        android:background="@color/inputs"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintVertical_bias="0.102"
+        tools:layout_editor_absoluteX="28dp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="288dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="376dp"
+        android:background="@color/inputs"
+        android:ems="10"
+        android:inputType="date"
+        android:text="Fecha de Nacimiento"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="113dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="464dp"
+        android:backgroundTint="@color/naranjaIntenso"
+        android:text="Registro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
