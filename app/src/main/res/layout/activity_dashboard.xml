@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/color_fondo_menubar"
         app:itemIconTint="@drawable/color_icono_menubar"
         app:itemTextColor="@drawable/color_icono_menubar"

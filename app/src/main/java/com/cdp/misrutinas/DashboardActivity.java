@@ -3,6 +3,7 @@ package com.cdp.misrutinas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -25,16 +26,18 @@ public class DashboardActivity extends AppCompatActivity {
 
                 int itemId = item.getItemId();
                 if (itemId == R.id.home) {
-                    Toast.makeText(DashboardActivity.this, "Inicio", Toast.LENGTH_LONG).show();
+                    return true;
                 } else if (itemId == R.id.finanza) {
-                    Toast.makeText(DashboardActivity.this, "Finanza", Toast.LENGTH_LONG).show();
+                    return true;
                 } else if (itemId == R.id.calendario) {
-                    Toast.makeText(DashboardActivity.this, "Calendario", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), CalendarioActivity.class));
+                    return true;
                 } else if (itemId == R.id.contacto) {
-                    Toast.makeText(DashboardActivity.this, "Contacto", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), ContactoActivity.class));
+                    return true;
                 }
 
-                return true;
+                return false;
             }
         });
     }

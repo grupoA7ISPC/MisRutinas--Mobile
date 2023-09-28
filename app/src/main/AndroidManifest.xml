@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MisRutinas"
         tools:targetApi="31">
         <activity
+            android:name=".CalendarioActivity"
+            android:exported="false" />
+        <activity
             android:name=".ContactoActivity"
             android:exported="false" />
         <activity
