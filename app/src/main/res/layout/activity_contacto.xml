@@ -1,5 +1,6 @@
+
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,159 +8,142 @@
     android:background="@color/background"
     tools:context=".ContactoActivity">
 
-    <Button
-        android:id="@+id/btnContacto"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="#FF6005"
-        android:text="@string/btnEnviar"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMensaje"
-        app:layout_constraintVertical_bias="0.266" />
-
     <TextView
-        android:id="@+id/textViewContacto"
+        android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="16dp"
         android:text="@string/h1Contactanos"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="459dp"
+        android:background="@drawable/button_primary"
+        android:text="@string/btnEnviar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Nombre -->
 
     <EditText
         android:id="@+id/editTextNombre"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="#E1E1F6"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:clipToOutline="true"
         android:ems="10"
         android:hint="@string/inputNombre"
         android:inputType="text"
         android:textAlignment="center"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.056"
-        android:clipToOutline="true"/>
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="198dp"
+        />
 
     <EditText
         android:id="@+id/editTextCorreo"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="36dp"
-        android:background="#E1E1F6"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/inputCorreo"
-        android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="271dp"/>
 
     <EditText
         android:id="@+id/editTextMensaje"
-        android:layout_width="300dp"
-        android:layout_height="130dp"
-        android:background="#E1E1F6"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="339dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_generico"
+        android:clipToOutline="true"
         android:ems="10"
         android:hint="@string/inputTextArea"
-        android:inputType="textMultiLine"
-        android:maxLines="8"
-        android:minLines="4"
         android:textAlignment="center"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorreo"
-        app:layout_constraintVertical_bias="0.136" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/h2Contacto"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewContacto" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="137dp"
+        android:text="@string/h2Contacto"
+        />
 
     <View
         android:id="@+id/divider"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="2dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="530dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnContacto" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="38dp"
         android:layout_height="58dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
-        app:layout_constraintVertical_bias="0.051"
+        android:layout_marginTop="560dp"
         app:srcCompat="@drawable/icon_instagram"
-        tools:layout_editor_absoluteX="78dp" />
+        android:layout_marginLeft="70dp"/>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="38dp"
         android:layout_height="58dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
-        app:layout_constraintVertical_bias="0.051"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="560dp"
         app:srcCompat="@drawable/icon_github" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="38dp"
         android:layout_height="58dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="92dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
-        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginTop="560dp"
+        android:layout_marginLeft="230dp"
         app:srcCompat="@drawable/icon_whatsapp" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="38dp"
         android:layout_height="58dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="92dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/btnContacto"
-        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginTop="560dp"
+        android:layout_marginLeft="310dp"
         app:srcCompat="@drawable/phone" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
