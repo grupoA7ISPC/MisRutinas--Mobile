@@ -13,31 +13,30 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class CalendarioActivity extends AppCompatActivity {
 
-    BottomNavigationView nav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
-        nav = findViewById(R.id.nav);
-        nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                int itemId = item.getItemId();
-                if (itemId == R.id.calendario) {
-                    return true;
-                } else if (itemId == R.id.finanza) {
-                    Toast.makeText(CalendarioActivity.this, "Finanza", Toast.LENGTH_LONG).show();
-                } else if (itemId == R.id.contacto) {
-                    startActivity(new Intent(getApplicationContext(), ContactoActivity.class));
-                    return true;
-                } else if (itemId == R.id.home) {
-                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                    return true;
-                }
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav);
+        bottomNavigationView.setSelectedItemId(R.id.calendario);
+        bottomNavigationView.setOnItemSelectedListener(this::onNavigationItemSelected);
+    }
 
-                return false;
-            }
-        });
+    private boolean onNavigationItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.calendario) {
+            return true;
+        } else if (itemId == R.id.home) {
+            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+            return true;
+        } else if (itemId == R.id.finanza) {
+            startActivity(new Intent(getApplicationContext(), FinanzasActivity.class));
+            return true;
+        } else if (itemId == R.id.contacto) {
+            startActivity(new Intent(getApplicationContext(), ContactoActivity.class));
+            return true;
+        }
+        return false;
     }
 }

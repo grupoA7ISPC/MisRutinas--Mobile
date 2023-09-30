@@ -19,26 +19,25 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        nav = findViewById(R.id.nav);
-        nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnItemSelectedListener(this::onNavigationItemSelected);
+    }
 
-                int itemId = item.getItemId();
-                if (itemId == R.id.home) {
-                    return true;
-                } else if (itemId == R.id.finanza) {
-                    return true;
-                } else if (itemId == R.id.calendario) {
-                    startActivity(new Intent(getApplicationContext(), CalendarioActivity.class));
-                    return true;
-                } else if (itemId == R.id.contacto) {
-                    startActivity(new Intent(getApplicationContext(), ContactoActivity.class));
-                    return true;
-                }
-
-                return false;
-            }
-        });
+    private boolean onNavigationItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.home) {
+            return true;
+        } else if (itemId == R.id.finanza) {
+            startActivity(new Intent(getApplicationContext(), FinanzasActivity.class));
+            return true;
+        } else if (itemId == R.id.calendario) {
+            startActivity(new Intent(getApplicationContext(), CalendarioActivity.class));
+            return true;
+        } else if (itemId == R.id.contacto) {
+            startActivity(new Intent(getApplicationContext(), ContactoActivity.class));
+            return true;
+        }
+        return false;
     }
 }
