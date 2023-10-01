@@ -19,94 +19,6 @@
         app:menu="@menu/menu_bar" />
 
 
-    <RelativeLayout
-        android:id="@+id/rlDashboardTotalSocios"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/lyDashboardTop"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/imput_dashboard"
-        android:orientation="horizontal"
-        android:onClick="btnSocioList"
-        >
-
-        <ImageView
-            android:id="@+id/cardSocioIcon"
-            android:layout_width="64dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="27dp"
-            android:paddingLeft="1dp"
-            android:paddingRight="14dp"
-            app:srcCompat="@drawable/_cono1" />
-
-        <TextView
-            android:id="@+id/cardSocioTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="90dp"
-            android:text="Total de socios \n         250"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlDashboardTotalEnt"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/lyDashboardTop"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="47dp"
-        android:background="@drawable/imput_card_entrenador"
-        android:orientation="horizontal"
-        android:onClick="btnProfeList"
-        >
-
-        <ImageView
-            android:id="@+id/cardProfeIcon"
-            android:layout_width="63dp"
-            android:layout_height="53dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="27dp"
-            android:layout_marginTop="8dp"
-            android:paddingLeft="1dp"
-            android:paddingRight="1dp"
-            app:srcCompat="@drawable/icono_sociosdash" />
-
-        <TextView
-            android:id="@+id/cardProfeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="60dp"
-            android:text="Total de Entrenadores \n                   8"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-
     <LinearLayout
         android:id="@+id/lyDashboardTop"
         android:layout_width="match_parent"
@@ -176,5 +88,156 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/rlDashboardTotalSocios"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/lyDashboardTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/imput_dashboard"
+        android:orientation="horizontal"
+        android:onClick="btnSocioList"
+        >
+
+        <ImageView
+            android:id="@+id/cardSocioIcon"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="27dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="14dp"
+            app:srcCompat="@drawable/_cono1" />
+
+        <TextView
+            android:id="@+id/cardSocioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="90dp"
+            android:text="Total de socios \n         120"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlDashboardTotalEnt"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/lyDashboardTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="47dp"
+        android:background="@drawable/imput_card_entrenador"
+        android:orientation="horizontal"
+        android:onClick="btnProfeList"
+        >
+
+        <ImageView
+            android:id="@+id/cardProfeIcon"
+            android:layout_width="63dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            app:srcCompat="@drawable/icono_sociosdash" />
+
+        <TextView
+            android:id="@+id/cardProfeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="60dp"
+            android:text="Total de Entrenadores \n                   4"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+<!--    <HorizontalScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/rlDashboardTotalEnt">-->
+
+        <RelativeLayout
+            android:id="@+id/rlDashboardCardClase"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_clase"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_below="@id/rlDashboardTotalEnt"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/tvTextCardClase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clase/Membresía"
+                android:textSize="14sp"
+                android:textColor="@color/white">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvH1CardClase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Pilates"
+                android:textColor="@color/naranjaSoft"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_below="@id/tvTextCardClase">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/iconCardClase"
+                android:layout_height="22dp"
+                android:layout_width="match_parent"
+                android:src="@drawable/icon_exercise"
+                android:layout_below="@id/tvH1CardClase"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="120 socios"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_below="@id/iconCardClase">
+
+            </TextView>
+
+        </RelativeLayout>
+
+<!--    </HorizontalScrollView>-->
 </RelativeLayout>
 
