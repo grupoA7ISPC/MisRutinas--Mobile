@@ -31,6 +31,18 @@
             android:name=".RegistroActivity"
             android:exported="false" />
         <activity
+            android:name=".ListaProfesorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListaSocioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarProfesorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarSocioActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

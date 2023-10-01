@@ -19,5 +19,6 @@
 
     <string name="username">@Username</string>
 
-    <string name="editBtn">Editar</string>
+    <string name="editBtn">Presiona para editar</string>
+    <string name="editBtnDefault">Editar</string>
 </resources>

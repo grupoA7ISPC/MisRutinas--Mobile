@@ -47,6 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:onClick="btnEditarProfesor"
                 app:cardBackgroundColor="@color/relieve"
                 app:cardCornerRadius="8dp">
 

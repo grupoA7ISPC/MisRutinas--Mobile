@@ -18,4 +18,9 @@ public class ListaSocioActivity extends AppCompatActivity {
         Intent intent=new Intent(ListaSocioActivity.this,DashboardActivity.class);
         startActivity(intent);
     }
+
+    public void btnEditarSocio(View view) {
+        Intent intent=new Intent(ListaSocioActivity.this,EditarSocioActivity.class);
+        startActivity(intent);
+    }
 }
