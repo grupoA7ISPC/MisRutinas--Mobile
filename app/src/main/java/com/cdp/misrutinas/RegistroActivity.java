@@ -18,4 +18,8 @@ public class RegistroActivity extends AppCompatActivity {
         Intent intent=new Intent(RegistroActivity.this,MainActivity.class);
         startActivity(intent);
     }
+    public void btnRegistro(View view){
+        Intent intent=new Intent(RegistroActivity.this,IniciarSesionActivity.class);
+        startActivity(intent);
+    }
 }

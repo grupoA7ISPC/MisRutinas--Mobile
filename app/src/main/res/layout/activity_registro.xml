@@ -125,7 +125,7 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="Ingrese fecha de nacimiento \n dd/mm/aaaa"
-        android:inputType="textPassword"
+        android:inputType="date"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
@@ -135,12 +135,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="113dp"
+        android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="602dp"
         android:background="@drawable/button_primary"
         android:text="Registrarse"
+        android:onClick="btnRegistro"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
