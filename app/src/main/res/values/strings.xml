@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">MisRutinas</string>
 
-    <!-- Contacto -->
+    <!-- Títulos activities -->
+    <string name="h1Contactanos">Contáctanos</string>
     <string name="h2Contacto">¿Tienes alguna pregunta o comentario? Envíanos un mensaje y te responderemos lo antes posible.</string>
+    <string name="h1Socios">Socios</string>
+    <string name="h1Profesores">Profesores</string>
+
+    <!-- Contacto -->
     <string name="inputNombre">Nombre</string>
     <string name="inputCorreo">Correo electronico</string>
-    <string name="h1Contactanos">Contáctanos</string>
     <string name="inputTextArea">Mensaje (maximo 200 caracteres)</string>
     <string name="btnEnviar">Enviar</string>
 
@@ -14,4 +18,6 @@
     <string name="inputContraseña">Contraseña</string>
 
     <string name="username">@Username</string>
+
+    <string name="editBtn">Editar</string>
 </resources>
