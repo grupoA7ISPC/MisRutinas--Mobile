@@ -37,7 +37,7 @@
             android:name=".ListaSocioActivity"
             android:exported="false" />
         <activity
-            android:name=".EditarProfesorActivity"
+            android:name=".EditarEntrenadorActivity"
             android:exported="false" />
         <activity
             android:name=".EditarSocioActivity"
