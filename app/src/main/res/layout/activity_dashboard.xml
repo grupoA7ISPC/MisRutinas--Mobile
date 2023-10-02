@@ -19,74 +19,68 @@
         app:menu="@menu/menu_bar" />
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lyDashboardTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="12dp"
         android:background="@drawable/background_main"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-
         >
+
 
         <Button
             android:id="@+id/btnDashboardLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
+            android:onClick="btnLogout"
             android:padding="0dp"
             android:text="Cerrar sesión"
             android:textColor="@color/gris"
-            android:onClick="btnLogout"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/ivAvatarDashboard"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/perfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDashboardLogout" />
+
+        <TextView
+            android:id="@+id/tvDashboardWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center">
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="28dp"
+            android:text="Bienvenido..."
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivAvatarDashboard"
+            app:layout_constraintTop_toBottomOf="@+id/btnDashboardLogout" />
 
-            <ImageView
-                android:id="@+id/ivAvatarDashboard"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_alignParentStart="true"
-                android:layout_gravity="center"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/avatar_default" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDashboardWelcome"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:text="@string/username"
+            android:textColor="@color/background"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivAvatarDashboard"
+            app:layout_constraintTop_toBottomOf="@+id/tvDashboardWelcome" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvDashboardWelcome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="Bienvenido..."
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvDashboardWelcome"
-                    android:layout_alignParentEnd="true"
-                    android:text="@string/username"
-                    android:textColor="@color/background"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:id="@+id/rlDashboardTotalSocios"
