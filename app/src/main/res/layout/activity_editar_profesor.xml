@@ -4,15 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarProfesorActivity">
+    android:background="@color/background"
+    android:clipChildren="true"
+    tools:context=".EditarEntrenadorActivity">
+
+    <ImageView
+        android:id="@+id/volver_editar_entrenador"
+        android:layout_width="16.03dp"
+        android:layout_height="23dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="21dp"
+        android:onClick="btnVolverEditarEntrenador"
+        android:src="@mipmap/flecha_volver"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewEditarEntrenador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity Editar Profesor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="16dp"
+        android:text="Editar Entrenador"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSocio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="108dp"
+        android:layout_marginLeft="16dp"
+        android:text="Verónica Torres"
+        android:textColor="@color/naranjaIntenso"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:clipToOutline="true"
+        android:ems="10"
+        android:hint="Verónica"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="158dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextApellido"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Torres"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="231dp"/>
+
+    <EditText
+        android:id="@+id/editTextNomUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="verofxt"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="304dp"/>
+
+    <EditText
+        android:id="@+id/editTextCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="verotorresa@misrutinas.com"
+        android:textColorHint="@color/black"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="377dp"/>
+
+
+
+    <EditText
+        android:id="@+id/editTextFecNac"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Fecha de nacimiento \n 08/10/1990"
+        android:textColorHint="@color/black"
+        android:inputType="date"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="450dp"/>
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="539dp"
+        android:background="@drawable/button_primary"
+        android:text="Guardar"
+        android:onClick="btnGuardarEntrenador"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEliminar"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="222dp"
+        android:layout_marginTop="539dp"
+        android:background="@drawable/button_primary"
+        android:onClick="btnEliminarEntrenador"
+        android:text="Eliminar"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ public class ListaProfesorActivity extends AppCompatActivity {
     }
 
     public void btnEditarProfesor(View view) {
-        Intent intent=new Intent(ListaProfesorActivity.this,EditarProfesorActivity.class);
+        Intent intent=new Intent(ListaProfesorActivity.this, EditarEntrenadorActivity.class);
         startActivity(intent);
     }
 }
