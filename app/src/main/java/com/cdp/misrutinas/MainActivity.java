@@ -3,10 +3,18 @@ package com.cdp.misrutinas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
+//    MRSQLiteHelper usdbh = new MRSQLiteHelper(this, "DBMisRutinas", null, 1);
+//    SQLiteDatabase db = usdbh.getWritableDatabase();
+
+//    if(db != null) {
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
