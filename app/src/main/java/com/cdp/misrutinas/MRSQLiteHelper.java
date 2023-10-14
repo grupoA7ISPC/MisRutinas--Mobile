@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MRSQLiteHelper extends SQLiteOpenHelper {
 
-    String[][] tables = new String[4][2]; //ESTO VA CAMBIANDO A MEDIDA LE VAN AÑADIENDO TABLAS. DEBE TERMINAR EN [12][2].
+    String[][] tables = new String[12][2]; //ESTO VA CAMBIANDO A MEDIDA LE VAN AÑADIENDO TABLAS. DEBE TERMINAR EN [12][2].
 
     public MRSQLiteHelper(Context contexto, String nombre, CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);
@@ -42,6 +42,11 @@ public class MRSQLiteHelper extends SQLiteOpenHelper {
         tables[9][0] = "CREATE TABLE Clase_turno (id_clase_turno INTEGER PRIMARY KEY AUTOINCREMENT, id_clase INTEGER,id_turno INTEGER, id_entrenador INTEGER, FOREIGN KEY (id_clase) REFERENCES clase(id_clase), FOREIGN KEY (id_turno) REFERENCES turno(id_turno),FOREIGN KEY (id_entrenador) REFERENCES entrenador(id_entrenador))";
         tables[9][1] = "Clase_turno";
 
+        tables[10][0] = "CREATE TABLE Socio_clase_turno (id_soc_cla_tur INTEGER PRIMARY KEY AUTOINCREMENT, id_socio INTEGER,id_clase_turno INTEGER, nombre VARCHAR(30) NOT NULL, FOREIGN KEY (id_socio) REFERENCES socio(id_socio), FOREIGN KEY (id_clase_turno) REFERENCES clase_turno(id_clase_turno))";
+        tables[10][1] = "Socio_clase_turno";
+
+        tables[11][0] = "CREATE TABLE Soc_cla_tur_cal (id_soc_cla_tur_cal INTEGER PRIMARY KEY AUTOINCREMENT, id_soc_cla_tur INTEGER,id_calen INTEGER, FOREIGN KEY (id_soc_cla_tur) REFERENCES socio_clase_turno(id_soc_cla_tur), FOREIGN KEY (id_calen) REFERENCES calendario(id_calen))";
+        tables[11][1] = "Soc_cla_tur_cal";
     }
 
     @Override
