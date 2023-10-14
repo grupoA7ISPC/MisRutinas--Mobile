@@ -32,6 +32,16 @@ public class MRSQLiteHelper extends SQLiteOpenHelper {
 
         tables[6][0] = "CREATE TABLE Horario (id_hor INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(30) NOT NULL, inicio TIME NOT NULL, fin TIME NOT NULL)";
         tables[6][1] = "Horario";
+
+        tables[7][0] = "CREATE TABLE Dia (id_dia INTEGER PRIMARY KEY AUTOINCREMENT, nombre CHAR(9) NOT NULL)";
+        tables[7][1] = "Dia";
+
+        tables[8][0] = "CREATE TABLE Turno (id_turno INTEGER PRIMARY KEY AUTOINCREMENT, id_dia INTEGER, id_hor INTEGER, nombre VARCHAR(30) NOT NULL, FOREIGN KEY (id_dia) REFERENCES dia(id_dia), FOREIGN KEY (id_hor) REFERENCES horario(id_hor))";
+        tables[8][1] = "Turno";
+
+        tables[9][0] = "CREATE TABLE Clase_turno (id_clase_turno INTEGER PRIMARY KEY AUTOINCREMENT, id_clase INTEGER,id_turno INTEGER, id_entrenador INTEGER, FOREIGN KEY (id_clase) REFERENCES clase(id_clase), FOREIGN KEY (id_turno) REFERENCES turno(id_turno),FOREIGN KEY (id_entrenador) REFERENCES entrenador(id_entrenador))";
+        tables[9][1] = "Clase_turno";
+
     }
 
     @Override
