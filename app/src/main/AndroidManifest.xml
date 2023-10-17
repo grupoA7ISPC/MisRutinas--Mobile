@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MisRutinas"
         tools:targetApi="31">
         <activity
+            android:name=".CrearClaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarClaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".FinanzasActivity"
             android:exported="false" />
         <activity
