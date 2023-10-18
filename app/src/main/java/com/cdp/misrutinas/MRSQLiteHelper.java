@@ -1,16 +1,23 @@
 package com.cdp.misrutinas;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class MRSQLiteHelper extends SQLiteOpenHelper {
-
+    private static final String DATABASE_NAME = "DBMisRutinas";
+    private static final int DATABASE_VERSION = 1;
     String[][] tables = new String[12][2]; //ESTO VA CAMBIANDO A MEDIDA LE VAN AÑADIENDO TABLAS. DEBE TERMINAR EN [12][2].
 
-    public MRSQLiteHelper(Context contexto, String nombre, CursorFactory factory, int version) {
-        super(contexto, nombre, factory, version);
+    public MRSQLiteHelper(Context contexto) {
+        super(contexto, DATABASE_NAME, null, DATABASE_VERSION);
+
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
 
         tables[0][0] = "CREATE TABLE Rol (id_rol INTEGER PRIMARY KEY AUTOINCREMENT, nombre_rol CHAR(10) NOT NULL)";
         tables[0][1] = "Rol";
@@ -47,14 +54,23 @@ public class MRSQLiteHelper extends SQLiteOpenHelper {
 
         tables[11][0] = "CREATE TABLE Soc_cla_tur_cal (id_soc_cla_tur_cal INTEGER PRIMARY KEY AUTOINCREMENT, id_soc_cla_tur INTEGER,id_calen INTEGER, FOREIGN KEY (id_soc_cla_tur) REFERENCES socio_clase_turno(id_soc_cla_tur), FOREIGN KEY (id_calen) REFERENCES calendario(id_calen))";
         tables[11][1] = "Soc_cla_tur_cal";
-    }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
         for(int i = 0; i < tables.length; i++) {
             String tableSQL = tables[i][0];
             db.execSQL(tableSQL);
         }
+
+        ContentValues admin = new ContentValues();
+        admin.put("nombre_rol", "admin");
+        db.insert("Rol", null, admin);
+
+        ContentValues socio = new ContentValues();
+        socio.put("nombre_rol", "socio");
+        db.insert("Rol", null, socio);
+
+        ContentValues trainer = new ContentValues();
+        trainer.put("nombre_rol", "entrenador");
+        db.insert("Rol", null, trainer);
     }
 
     @Override

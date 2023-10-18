@@ -9,12 +9,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-//    MRSQLiteHelper usdbh = new MRSQLiteHelper(this, "DBMisRutinas", null, 1);
-//    SQLiteDatabase db = usdbh.getWritableDatabase();
-
-//    if(db != null) {
-//
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
