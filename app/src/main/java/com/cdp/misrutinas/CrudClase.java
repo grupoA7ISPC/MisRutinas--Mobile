@@ -78,4 +78,23 @@ public class CrudClase extends MRSQLiteHelper{
         return clase;
     }
 
+    public boolean editarClase (int id, String nombreClase,String precioClase, String descripcionClase){
+        boolean correcto = false;
+
+        MRSQLiteHelper usdbh = new MRSQLiteHelper(context);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+
+        try {
+
+            db.execSQL("UPDATE Clase SET nombre = '" + nombreClase + "', precio = '" + precioClase + "', descripcion = '" + descripcionClase + "' WHERE id_clase = '" + id + "'");
+            correcto = true;
+        }catch (Exception ex) {
+            ex.toString();
+            correcto=false;
+        }finally {
+            db.close();
+        }
+        return correcto;
+    }
+
 }
