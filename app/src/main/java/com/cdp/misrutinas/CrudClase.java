@@ -97,4 +97,23 @@ public class CrudClase extends MRSQLiteHelper{
         return correcto;
     }
 
+    public boolean eliminarClase (int id){
+        boolean correcto = false;
+
+        MRSQLiteHelper usdbh = new MRSQLiteHelper(context);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+
+        try {
+
+            db.execSQL("DELETE FROM Clase WHERE id_clase = '" + id + "'");
+            correcto = true;
+        }catch (Exception ex) {
+            ex.toString();
+            correcto=false;
+        }finally {
+            db.close();
+        }
+        return correcto;
+    }
+
 }
