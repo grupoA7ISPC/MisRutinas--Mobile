@@ -55,4 +55,27 @@ public class CrudClase extends MRSQLiteHelper{
 
     }
 
+    public Clases verClase(int id){
+
+        MRSQLiteHelper usdbh = new MRSQLiteHelper(context);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+
+        Clases clase = null;
+        Cursor cursorClases = null;
+
+        cursorClases = db.rawQuery("SELECT * FROM Clase WHERE id_clase = " + id + " LIMIT 1", null);
+
+        if (cursorClases.moveToFirst()){
+            clase = new Clases();
+            clase.setId(cursorClases.getInt(0));
+            clase.setNombre(cursorClases.getString(1));
+            clase.setPrecio(cursorClases.getString(2));
+            clase.setDescripcion(cursorClases.getString(3));
+        }
+
+        cursorClases.close();
+
+        return clase;
+    }
+
 }
