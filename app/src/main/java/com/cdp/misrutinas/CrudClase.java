@@ -1,6 +1,13 @@
 package com.cdp.misrutinas;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.cdp.misrutinas.entidades.Clases;
+
+import java.util.ArrayList;
 
 public class CrudClase extends MRSQLiteHelper{
 
