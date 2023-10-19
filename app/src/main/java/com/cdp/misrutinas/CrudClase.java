@@ -26,4 +26,33 @@ public class CrudClase extends MRSQLiteHelper{
 
     }
 
+    public ArrayList<Clases> mostrarClases(){
+
+        MRSQLiteHelper usdbh = new MRSQLiteHelper(context);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+
+        ArrayList<Clases> listaClases = new ArrayList<>();
+        Clases clase = null;
+        Cursor cursorClases = null;
+
+        cursorClases = db.rawQuery("SELECT * FROM Clase", null);
+
+        if (cursorClases.moveToFirst()){
+            do {
+                clase = new Clases();
+                clase.setId(cursorClases.getInt(0));
+                clase.setNombre(cursorClases.getString(1));
+                clase.setPrecio(cursorClases.getString(2));
+                clase.setDescripcion(cursorClases.getString(3));
+
+                listaClases.add(clase);
+            }while (cursorClases.moveToNext());
+        }
+
+        cursorClases.close();
+
+        return listaClases;
+
+    }
+
 }
