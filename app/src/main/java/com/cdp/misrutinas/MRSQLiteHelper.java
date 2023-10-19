@@ -71,6 +71,34 @@ public class MRSQLiteHelper extends SQLiteOpenHelper {
         ContentValues trainer = new ContentValues();
         trainer.put("nombre_rol", "entrenador");
         db.insert("Rol", null, trainer);
+
+        ContentValues lunes = new ContentValues();
+        lunes.put("nombre", "Lunes");
+        db.insert("Dia", null, lunes);
+
+        ContentValues martes = new ContentValues();
+        martes.put("nombre", "Martes");
+        db.insert("Dia", null, martes);
+
+        ContentValues miercoles = new ContentValues();
+        miercoles.put("nombre", "Miércoles");
+        db.insert("Dia", null, miercoles);
+
+        ContentValues jueves = new ContentValues();
+        jueves.put("nombre", "Jueves");
+        db.insert("Dia", null, jueves);
+
+        ContentValues viernes = new ContentValues();
+        viernes.put("nombre", "Viernes");
+        db.insert("Dia", null, viernes);
+
+        ContentValues sabado = new ContentValues();
+        sabado.put("nombre", "Sábado");
+        db.insert("Dia", null, sabado);
+
+        ContentValues domingo = new ContentValues();
+        domingo.put("nombre", "Domingo");
+        db.insert("Dia", null, domingo);
     }
 
     @Override
