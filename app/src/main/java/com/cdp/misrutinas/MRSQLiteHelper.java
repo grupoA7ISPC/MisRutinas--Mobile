@@ -34,7 +34,7 @@ public class MRSQLiteHelper extends SQLiteOpenHelper {
         tables[4][0] = "CREATE TABLE Calendario (id_calen INTEGER PRIMARY KEY AUTOINCREMENT, hora TIME NOT NULL, fecha DATE NOT NULL)";
         tables[4][1] = "Calendario";
 
-        tables[5][0] = "CREATE TABLE Clase (id_clase INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(45) NOT NULL, precio DECIMAL NOT NULL, descripcion VARCHAR(200) NOT NULL, clasecol VARCHAR(45) NOT NULL)";
+        tables[5][0] = "CREATE TABLE Clase (id_clase INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(45) NOT NULL, precio DECIMAL NOT NULL, descripcion VARCHAR(200) NOT NULL)";
         tables[5][1] = "Clase";
 
         tables[6][0] = "CREATE TABLE Horario (id_hor INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(30) NOT NULL, inicio TIME NOT NULL, fin TIME NOT NULL)";
