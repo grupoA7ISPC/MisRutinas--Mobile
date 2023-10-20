@@ -176,61 +176,60 @@
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_below="@id/rlDashboardTotalEnt">-->
 
-        <RelativeLayout
-            android:id="@+id/rlDashboardCardClase"
-            android:layout_width="220dp"
+    <RelativeLayout
+        android:id="@+id/rlDashboardCardClase"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlDashboardTotalEnt"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/card_clase"
+        android:gravity="center"
+        android:onClick="btnClaseList"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTextCardClase"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_clase"
-            android:padding="16dp"
+            android:text="Clase/Membresía"
+            android:textColor="@color/white"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/tvH1CardClase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTextCardClase"
             android:gravity="center"
-            android:layout_below="@id/rlDashboardTotalEnt"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp">
+            android:text="Pilates"
+            android:textColor="@color/naranjaSoft"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
 
-            <TextView
-                android:id="@+id/tvTextCardClase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Clase/Membresía"
-                android:textSize="14sp"
-                android:textColor="@color/white">
-            </TextView>
+        <ImageView
+            android:id="@+id/iconCardClase"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_below="@id/tvH1CardClase"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon_exercise">
 
-            <TextView
-                android:id="@+id/tvH1CardClase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Pilates"
-                android:textColor="@color/naranjaSoft"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_below="@id/tvTextCardClase">
-            </TextView>
+        </ImageView>
 
-            <ImageView
-                android:id="@+id/iconCardClase"
-                android:layout_height="22dp"
-                android:layout_width="match_parent"
-                android:src="@drawable/icon_exercise"
-                android:layout_below="@id/tvH1CardClase"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iconCardClase"
+            android:gravity="center"
+            android:text="120 socios"
+            android:textColor="@color/white"
+            android:textStyle="bold">
 
-            </ImageView>
+        </TextView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="120 socios"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:layout_below="@id/iconCardClase">
-
-            </TextView>
-
-        </RelativeLayout>
+    </RelativeLayout>
 
 <!--    </HorizontalScrollView>-->
 </RelativeLayout>

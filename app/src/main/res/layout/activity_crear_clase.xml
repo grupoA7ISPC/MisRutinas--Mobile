@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNombreClase"
+        android:id="@+id/editNombre"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
@@ -43,7 +43,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextPrecioClase"
+        android:id="@+id/editPrecio"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
@@ -60,7 +60,7 @@
         android:layout_marginTop="231dp"/>
 
     <EditText
-        android:id="@+id/editTextDescripcionClase"
+        android:id="@+id/editDescripcion"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
@@ -78,14 +78,13 @@
 
 
     <Button
-        android:id="@+id/buttonGuardar"
+        android:id="@+id/btnAgregar"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="396dp"
         android:background="@drawable/button_primary"
-        android:onClick="btnGuardarSocio"
-        android:text="Guardar"
+        android:text="Agregar"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

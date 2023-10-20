@@ -51,6 +51,11 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent=new Intent(DashboardActivity.this, ListaProfesorActivity.class);
         startActivity(intent);
     }
+
+    public void btnClaseList(View view){
+        Intent intent=new Intent(DashboardActivity.this, CrearClaseActivity.class);
+        startActivity(intent);
+    }
     public void btnLogout(View view){
         Intent intent=new Intent(DashboardActivity.this, MainActivity.class);
         startActivity(intent);
