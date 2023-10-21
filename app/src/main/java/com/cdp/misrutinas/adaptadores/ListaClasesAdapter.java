@@ -10,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cdp.misrutinas.CrearClaseActivity;
+
 import com.cdp.misrutinas.R;
+import com.cdp.misrutinas.VerClaseActivity;
 import com.cdp.misrutinas.entidades.Clases;
 
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ public class ListaClasesAdapter extends RecyclerView.Adapter<ListaClasesAdapter.
                 @Override
                 public void onClick(View view) {
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, CrearClaseActivity.class);
+                    Intent intent = new Intent(context, VerClaseActivity.class);
                     intent.putExtra("ID", listaClases.get(getAdapterPosition()).getId());
                     context.startActivity(intent);
                 }

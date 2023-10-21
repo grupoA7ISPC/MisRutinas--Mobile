@@ -96,7 +96,7 @@
         android:layout_marginStart="222dp"
         android:layout_marginTop="396dp"
         android:background="@drawable/button_secondary"
-        android:onClick="btnCancelarClase"
+        android:onClick="irListaClase"
         android:text="Cancelar"
         android:textColor="@color/black"
         app:backgroundTint="@null"

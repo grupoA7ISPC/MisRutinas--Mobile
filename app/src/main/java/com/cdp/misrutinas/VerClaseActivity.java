@@ -10,6 +10,7 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.cdp.misrutinas.entidades.Clases;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -17,12 +18,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class VerClaseActivity extends AppCompatActivity {
 
     EditText txtNombre, txtPrecio, txtDescripcion;
-    Button btnGuarda;
-
-    FloatingActionButton fabEditar, fabEliminar;
+    Button btnGuarda,fabEditar,fabEliminar;
+    ImageView btnvolverListaClase;
 
     Clases clase;
     int id = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,10 @@ public class VerClaseActivity extends AppCompatActivity {
         txtPrecio = findViewById(R.id.txtPrecio);
         txtDescripcion = findViewById(R.id.txtDescripcion);
         btnGuarda = findViewById(R.id.btnGuarda);
-        //fabEditar = findViewById(R.id.fabEditar);
-        //fabEliminar = findViewById(R.id.fabEliminar);
+        fabEditar = findViewById(R.id.fabEditar);
+        fabEliminar = findViewById(R.id.fabEliminar);
+        btnvolverListaClase = findViewById(R.id.btnvolverListaClase);
+
 
         if(savedInstanceState == null){
             Bundle extras = getIntent().getExtras();
@@ -96,6 +99,10 @@ public class VerClaseActivity extends AppCompatActivity {
     private void irListaClase(){
         Intent intent = new Intent(this, ListaClaseActivity.class);
         startActivity(intent);
-
     }
+    public void volverListaClase(View view){
+        Intent intent=new Intent(VerClaseActivity.this, ListaClaseActivity.class);
+        startActivity(intent);
+    }
+
 }
