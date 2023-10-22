@@ -18,12 +18,12 @@
         android:src="@mipmap/flecha_volver" />
 
     <TextView
-        android:id="@+id/tvListaSocioTitle"
+        android:id="@+id/tvListaClaseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/volverClasedashboard"
         android:layout_marginTop="18dp"
-        android:text="Clases"
+        android:text="Lista de clases"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -32,7 +32,7 @@
         android:id="@+id/listaClases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvListaSocioTitle"/>
+        android:layout_below="@id/tvListaClaseTitle"/>
 
     <Button
         android:id="@+id/btnCrearClase"
