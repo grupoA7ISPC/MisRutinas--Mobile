@@ -5,7 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".CrearClaseActivity">
+    android:orientation="vertical"
+    tools:context=".VerClaseActivity">
+
+    <ImageView
+        android:id="@+id/btnvolverListaClase"
+        android:layout_width="16.03dp"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:onClick="volverListaClase"
+        android:src="@mipmap/flecha_volver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewNuevaClase"
@@ -14,7 +28,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="78dp"
         android:layout_marginLeft="16dp"
-        android:text="Nueva Clase"
+        android:text="Clase"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -24,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editNombre"
+        android:id="@+id/txtNombre"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
@@ -43,7 +57,7 @@
         />
 
     <EditText
-        android:id="@+id/editPrecio"
+        android:id="@+id/txtPrecio"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
@@ -60,7 +74,7 @@
         android:layout_marginTop="231dp"/>
 
     <EditText
-        android:id="@+id/editDescripcion"
+        android:id="@+id/txtDescripcion"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
@@ -78,26 +92,38 @@
 
 
     <Button
-        android:id="@+id/btnAgregar"
-        android:layout_width="140dp"
+        android:id="@+id/btnGuarda"
+        android:layout_width="240dp"
         android:layout_height="40dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="380dp"
         android:background="@drawable/button_primary"
-        android:text="Agregar"
+        android:text="Guardar cambios"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonCancelar"
+        android:id="@+id/fabEditar"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/button_primary"
+        android:text="Editar"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/fabEliminar"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="450dp"
         android:background="@drawable/button_secondary"
-        android:onClick="irListaClase"
-        android:text="Cancelar"
+        android:onClick="btnCancelarClase"
+        android:text="Eliminar"
         android:textColor="@color/black"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
