@@ -5,7 +5,9 @@
     <string name="h1Contactanos">Contáctanos</string>
     <string name="h2Contacto">¿Tienes alguna pregunta o comentario? Envíanos un mensaje y te responderemos lo antes posible.</string>
     <string name="h1Socios">Socios</string>
+    <string name="h1EditarSocio">Editar socio</string>
     <string name="h1Profesores">Profesores</string>
+    <string name="h1EditarEntrenador">Editar entrenador</string>
 
     <!-- Inputs -->
     <string name="inputNombre">Nombre</string>
@@ -15,6 +17,7 @@
     <string name="inputUsuario">Usuario*</string>
     <string name="inputContraseña">Contraseña*</string>
     <string name="inputDNI">DNI</string>
+    <string name="inputTel">Teléfono</string>
 
     <!-- Botones -->
     <string name="btnEnviar">Enviar</string>
@@ -24,6 +27,9 @@
     <string name="btnRegister">Registrarse</string>
     <string name="btnCrearSocio">Crear socio</string>
     <string name="btnCrearEntrenador">Crear entrenador</string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="btnVer">Ver</string>
+    <string name="btnVerDefault">Ver más</string>
 
     <string name="username">@GymMR</string>
 </resources>
