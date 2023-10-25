@@ -1,46 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/background"
     android:clipChildren="true"
+    android:orientation="vertical"
     tools:context=".RegistroActivity">
 
     <ImageView
         android:id="@+id/volver_registro"
         android:layout_width="16.03dp"
         android:layout_height="23dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="21dp"
         android:onClick="btnVolverRegistro"
-        android:src="@mipmap/flecha_volver"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@mipmap/flecha_volver"/>
 
     <TextView
         android:id="@+id/textViewRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="78dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="26dp"
         android:text="Registro"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextNombre"
+        android:id="@+id/textUserName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="@string/inputUsuario"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        android:maxLength="20"/>
+
+    <EditText
+        android:id="@+id/textEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputCorreo"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        android:layout_marginTop="20dp"
+        android:maxLength="75"/>
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/inputContraseña"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:background="@drawable/input_generico"
+        android:layout_marginTop="20dp"
+        android:maxLength="24"/>
+
+    <EditText
+        android:id="@+id/textNombre"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:clipToOutline="true"
         android:ems="10"
         android:hint="@string/inputNombre"
@@ -48,102 +77,51 @@
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="20dp"
+        android:maxLength="45"
         />
 
     <EditText
-        android:id="@+id/editTextApellido"
+        android:id="@+id/textApellido"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_generico"
         android:ems="10"
-        android:hint="Apellido"
+        android:hint="@string/inputApellido"
         android:inputType="text"
         android:textAlignment="center"
         android:visibility="visible"
-        android:background="@drawable/input_generico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="221dp"/>
+        android:maxLength="45"/>
 
     <EditText
-        android:id="@+id/editTextNomUsuario"
+        android:id="@+id/textDNI"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_generico"
         android:ems="10"
-        android:hint="Nombre de Usuario"
-        android:inputType="text"
+        android:hint="@string/inputDNI"
+        android:inputType="number"
         android:textAlignment="center"
         android:visibility="visible"
-        android:background="@drawable/input_generico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="294dp"/>
-
-    <EditText
-        android:id="@+id/editTextCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:visibility="visible"
-        android:background="@drawable/input_generico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="367dp"/>
-
-    <EditText
-        android:id="@+id/editTextContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:visibility="visible"
-        android:background="@drawable/input_generico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="440dp"/>
-
-    <EditText
-        android:id="@+id/editTextFecNac"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="Ingrese fecha de nacimiento \n dd/mm/aaaa"
-        android:inputType="date"
-        android:textAlignment="center"
-        android:visibility="visible"
-        android:background="@drawable/input_generico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="513dp"/>
+        android:maxLength="8"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnInsertar"
         android:layout_width="140dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="602dp"
         android:background="@drawable/button_primary"
-        android:text="Registrarse"
+        android:text="@string/btnRegister"
         android:onClick="btnRegistro"
-        app:backgroundTint="@null"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        app:backgroundTint="@null" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    Temporal-->
+    <TextView
+        android:id="@+id/textoResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="" />
+</LinearLayout>

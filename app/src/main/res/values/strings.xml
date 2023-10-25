@@ -7,18 +7,23 @@
     <string name="h1Socios">Socios</string>
     <string name="h1Profesores">Profesores</string>
 
-    <!-- Contacto -->
+    <!-- Inputs -->
     <string name="inputNombre">Nombre</string>
-    <string name="inputCorreo">Correo electronico</string>
+    <string name="inputApellido">Apellido</string>
+    <string name="inputCorreo">Correo electrónico*</string>
     <string name="inputTextArea">Mensaje (maximo 200 caracteres)</string>
+    <string name="inputUsuario">Usuario*</string>
+    <string name="inputContraseña">Contraseña*</string>
+    <string name="inputDNI">DNI</string>
+
+    <!-- Botones -->
     <string name="btnEnviar">Enviar</string>
-
-    <!-- Login -->
-    <string name="inputUsuario">Usuario</string>
-    <string name="inputContraseña">Contraseña</string>
-
-    <string name="username">@GymMR</string>
-
     <string name="editBtn">Presiona para editar</string>
     <string name="editBtnDefault">Editar</string>
+    <string name="deleteBtn">Eliminar</string>
+    <string name="btnRegister">Registrarse</string>
+    <string name="btnCrearSocio">Crear socio</string>
+    <string name="btnCrearEntrenador">Crear entrenador</string>
+
+    <string name="username">@GymMR</string>
 </resources>
