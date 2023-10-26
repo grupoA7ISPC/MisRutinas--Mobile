@@ -26,7 +26,7 @@ public class CrearEntrenadorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crear_socio);
+        setContentView(R.layout.activity_crear_entrenador);
 
         textNombre = findViewById(R.id.textNombre);
         textApellido = findViewById(R.id.textApellido);
@@ -60,7 +60,12 @@ public class CrearEntrenadorActivity extends AppCompatActivity {
         });
     }
 
-    public void cancelar(View view){
+    public void btnCancelar(View view){
+        Intent intent=new Intent(CrearEntrenadorActivity.this, ListaProfesorActivity.class);
+        startActivity(intent);
+    }
+
+    public void btnVolverListaEntrenador(View view){
         Intent intent=new Intent(CrearEntrenadorActivity.this, ListaProfesorActivity.class);
         startActivity(intent);
     }

@@ -20,7 +20,7 @@ public class ListaProfesorActivity extends AppCompatActivity {
     }
 
     public void irCrearEntrenador(View view) {
-//        Intent intent=new Intent(ListaProfesorActivity.this, CrearEntrenadorActivity.class);
-//        startActivity(intent);
+        Intent intent=new Intent(ListaProfesorActivity.this, CrearEntrenadorActivity.class);
+        startActivity(intent);
     }
 }

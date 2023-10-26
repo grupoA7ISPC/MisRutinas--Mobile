@@ -8,15 +8,15 @@
     android:orientation="vertical"
     android:clipChildren="true"
     android:padding="16dp"
-    tools:context=".EditarSocioActivity">
+    tools:context=".CrearEntrenadorActivity">
 
     <ImageView
         android:id="@+id/volver_editar_socio"
         android:layout_width="16.03dp"
         android:layout_height="23dp"
         android:layout_marginTop="21dp"
-        android:onClick="btnVolverEditarSocio"
         android:src="@mipmap/flecha_volver"
+        android:onClick="btnVolverListaEntrenador"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,7 +122,7 @@
         android:ems="10"
         android:hint="@string/inputCorreo"
         android:textColorHint="@color/secondaryText"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
@@ -133,7 +133,6 @@
         android:id="@+id/labelTelefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:text="@string/inputTel"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -146,7 +145,7 @@
         android:ems="10"
         android:hint="@string/inputTel"
         android:textColorHint="@color/secondaryText"
-        android:inputType="textEmailAddress"
+        android:inputType="phone"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
@@ -162,7 +161,7 @@
         android:layout_marginTop="16dp"
         android:layout_height="40dp"
         android:background="@drawable/button_primary"
-        android:text="Guardar"
+        android:text="@string/btnGuardar"
         app:backgroundTint="@null" />
 
     <Button
@@ -173,8 +172,8 @@
         android:layout_marginRight="60dp"
         android:textColor="@color/background"
         android:background="@drawable/button_secondary"
+        android:onClick="btnCancelar"
         android:text="@string/btnCancelar"
-        android:onClick="cancelar"
         app:backgroundTint="@null" />
 
     <!--    Temporal-->
@@ -185,4 +184,5 @@
         android:textSize="20sp"
         android:textColor="@color/white"
         android:text="" />
+
 </LinearLayout>
