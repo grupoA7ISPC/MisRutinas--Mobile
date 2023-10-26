@@ -30,6 +30,8 @@
     <string name="btnCancelar">Cancelar</string>
     <string name="btnVer">Ver</string>
     <string name="btnVerDefault">Ver más</string>
+    <string name="btnGuardar" >Guardar</string>
 
     <string name="username">@GymMR</string>
+
 </resources>
