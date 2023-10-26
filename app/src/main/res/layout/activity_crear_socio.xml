@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:clipChildren="true"
     android:padding="16dp"
-    tools:context=".EditarSocioActivity">
+    tools:context=".CrearSocioActivity">
 
     <ImageView
         android:id="@+id/volver_editar_socio"

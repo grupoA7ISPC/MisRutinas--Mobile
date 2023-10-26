@@ -13,9 +13,6 @@
         android:theme="@style/Theme.MisRutinas"
         tools:targetApi="31">
         <activity
-            android:name=".CrearEntrenadorActivity"
-            android:exported="false" />
-        <activity
             android:name=".CrearSocioActivity"
             android:exported="false" />
         <activity
@@ -49,13 +46,7 @@
             android:name=".RegistroActivity"
             android:exported="false" />
         <activity
-            android:name=".ListaProfesorActivity"
-            android:exported="false" />
-        <activity
             android:name=".ListaSocioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditarEntrenadorActivity"
             android:exported="false" />
         <activity
             android:name=".EditarSocioActivity"
