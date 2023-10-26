@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.cdp.misrutinas.entidades.Cliente;
+
+import java.util.ArrayList;
+
 public class CrudCliente extends MRSQLiteHelper{
     Context context;
 
@@ -122,12 +126,48 @@ public class CrudCliente extends MRSQLiteHelper{
 
 
 
+//------------------------------------
+//"CREATE TABLE Socio (id_socio INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, id_usuario INTEGER, FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario))";
+// "CREATE TABLE Entrenador (id_entrenador INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, id_usuario INTEGER, FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario))"
 
+    public long insertarCliente(String nombre, String apellido, String dni, String email, String telefono, int idRol) {
+        SQLiteDatabase db = super.getWritableDatabase();
 
+        if (!areFieldsValid(
+                new FieldLengthValidation(nombre, 1, 45),
+                new FieldLengthValidation(apellido, 1, 45),
+                new FieldLengthValidation(dni, 8, 8),
+                new FieldLengthValidation(email, 8, 75),
+                new FieldLengthValidation(telefono, 10, 10)
+        ) || !isValidEmail(db, email)) {
+            db.close();
+            return -1;
+        }
 
+        ContentValues valuesUser = new ContentValues();
+        valuesUser.put("nombre", nombre); //NULL
+        valuesUser.put("apellido", apellido); //NULL
+        valuesUser.put("dni", dni); //NULL
+        valuesUser.put("email", email); //NOT NULL
+        valuesUser.put("tel", telefono); //NOT NULL
+        valuesUser.put("id_rol", idRol); //NOT NULL
 
+        long idUsuario = db.insert("Usuario", null, valuesUser);
 
+        String table = (idRol == 3) ? "Entrenador" : "Socio";
 
+        if (idUsuario != -1) {
+            ContentValues valuesCliente = new ContentValues();
+            valuesCliente.put("id_usuario", idUsuario);
+            long idCliente = db.insert(table, null, valuesCliente);
 
+            db.close();
+
+            return idCliente;
+        } else {
+            db.close();
+            return -1;
+        }
+    }
 
 }

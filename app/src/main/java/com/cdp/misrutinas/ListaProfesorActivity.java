@@ -19,8 +19,8 @@ public class ListaProfesorActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void btnEditarProfesor(View view) {
-        Intent intent=new Intent(ListaProfesorActivity.this, EditarEntrenadorActivity.class);
+    public void irCrearEntrenador(View view) {
+        Intent intent=new Intent(ListaProfesorActivity.this, CrearEntrenadorActivity.class);
         startActivity(intent);
     }
 }

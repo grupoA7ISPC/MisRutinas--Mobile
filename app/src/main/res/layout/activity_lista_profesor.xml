@@ -38,6 +38,7 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/button_primary"
         app:backgroundTint="@null"
+        android:onClick="irCrearEntrenador"
         android:text="@string/btnCrearEntrenador" />
 
     <ScrollView

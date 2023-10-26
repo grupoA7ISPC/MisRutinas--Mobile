@@ -12,10 +12,10 @@
     <!-- Inputs -->
     <string name="inputNombre">Nombre</string>
     <string name="inputApellido">Apellido</string>
-    <string name="inputCorreo">Correo electrónico*</string>
+    <string name="inputCorreo">Correo electrónico</string>
     <string name="inputTextArea">Mensaje (maximo 200 caracteres)</string>
-    <string name="inputUsuario">Usuario*</string>
-    <string name="inputContraseña">Contraseña*</string>
+    <string name="inputUsuario">Usuario</string>
+    <string name="inputContraseña">Contraseña</string>
     <string name="inputDNI">DNI</string>
     <string name="inputTel">Teléfono</string>
 
