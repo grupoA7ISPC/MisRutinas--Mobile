@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.cdp.misrutinas.entidades.Cliente;
+import com.cdp.misrutinas.entidades.Clientes;
 
 import java.util.ArrayList;
 
@@ -170,4 +170,28 @@ public class CrudCliente extends MRSQLiteHelper{
         }
     }
 
+    public ArrayList<Clientes> listarClientes(int idRol){
+        SQLiteDatabase db = super.getWritableDatabase();
+
+        ArrayList<Clientes> listaClientes = new ArrayList<>();
+        Clientes cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("SELECT * FROM Usuario WHERE id_rol = " + idRol, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                cliente = new Clientes();
+                cliente.setId(cursor.getInt(0));
+                cliente.setNombre(cursor.getString(3));
+                cliente.setApellido(cursor.getString(2));
+
+                listaClientes.add(cliente);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        return listaClientes;
+    }
 }

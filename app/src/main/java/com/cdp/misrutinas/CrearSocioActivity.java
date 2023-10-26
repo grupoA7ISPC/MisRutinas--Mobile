@@ -53,6 +53,7 @@ public class CrearSocioActivity extends AppCompatActivity {
 
                 if (id != -1) {
                     textoResultado.setText("Registro insertado con ID: " + id);
+                    irListaSocios();
                 } else {
                     textoResultado.setText("Error al insertar el registro.");
                 }
@@ -62,6 +63,11 @@ public class CrearSocioActivity extends AppCompatActivity {
 
     public void cancelar(View view){
         Intent intent=new Intent(CrearSocioActivity.this, ListaSocioActivity.class);
+        startActivity(intent);
+    }
+
+    private void irListaSocios(){
+        Intent intent = new Intent(CrearSocioActivity.this, ListaSocioActivity.class);
         startActivity(intent);
     }
 }
