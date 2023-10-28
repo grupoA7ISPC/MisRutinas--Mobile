@@ -31,6 +31,7 @@
     <string name="btnVer">Ver</string>
     <string name="btnVerDefault">Ver más</string>
     <string name="btnGuardar" >Guardar</string>
+    <string name="btnVolver" >Volver</string>
 
     <string name="username">@GymMR</string>
 </resources>

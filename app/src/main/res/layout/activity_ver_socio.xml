@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/background"
     android:orientation="vertical"
     android:clipChildren="true"
@@ -15,7 +19,7 @@
         android:layout_width="16.03dp"
         android:layout_height="23dp"
         android:layout_marginTop="21dp"
-        android:onClick="volverListaClase"
+        android:onClick="btnVolverListaSocios"
         android:src="@mipmap/flecha_volver" />
 
     <TextView
@@ -176,3 +180,4 @@
         app:backgroundTint="@null" />
 
 </LinearLayout>
+</ScrollView>

@@ -216,4 +216,45 @@ public class CrudCliente extends MRSQLiteHelper{
         cursor.close();
         return cliente;
     }
+
+    public boolean editarCliente(int id, String nombre, String apellido, String dni, String email, String telefono, int idRol) {
+        boolean correcto = false;
+        SQLiteDatabase db = super.getWritableDatabase();
+
+        try {
+            ContentValues valuesUser = new ContentValues();
+            valuesUser.put("nombre", nombre);
+            valuesUser.put("apellido", apellido);
+            valuesUser.put("dni", dni);
+            valuesUser.put("email", email);
+            valuesUser.put("tel", telefono);
+            valuesUser.put("id_rol", idRol);
+
+            db.update("Usuario", valuesUser, "id_usuario = " + id, null);
+
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
+
+    public boolean eliminarCliente(int id) {
+        boolean correcto = false;
+        SQLiteDatabase db = super.getWritableDatabase();
+
+        try {
+            db.delete("Usuario", "id_usuario = " + id, null);
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
 }
