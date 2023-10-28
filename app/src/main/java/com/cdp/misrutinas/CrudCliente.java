@@ -194,4 +194,26 @@ public class CrudCliente extends MRSQLiteHelper{
 
         return listaClientes;
     }
+
+    public Clientes verCliente(int id){
+        SQLiteDatabase db = super.getWritableDatabase();
+
+        Clientes cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("SELECT * FROM Usuario WHERE id_usuario = " + id + " Limit 1", null );
+
+        //"CREATE TABLE Usuario (id_usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username VARCHAR(20) UNIQUE , apellido VARCHAR(45), nombre VARCHAR(45), dni INTEGER,  email VARCHAR(75) NOT NULL,tel INTEGER, pass VARCHAR(16), active BOOLEAN, id_rol INTEGER, FOREIGN KEY (id_rol) REFERENCES Rol(id_rol))";
+        if (cursor.moveToFirst()){
+            cliente = new Clientes();
+            cliente.setId(cursor.getInt(0));
+            cliente.setNombre(cursor.getString(3));
+            cliente.setApellido(cursor.getString(2));
+            cliente.setDni(cursor.getString(4));
+            cliente.setEmail(cursor.getString(5));
+            cliente.setTel(cursor.getString(6));
+        }
+        cursor.close();
+        return cliente;
+    }
 }

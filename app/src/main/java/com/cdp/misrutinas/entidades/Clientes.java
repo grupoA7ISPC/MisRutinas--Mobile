@@ -5,9 +5,9 @@ public class Clientes {
     private int idUsuario;
     private String nombre;
     private String apellido;
-    private int dni;
+    private String dni;
     private String email;
-    private int tel;
+    private String tel;
     private int id_rol;
 
     public int getId() {
@@ -38,11 +38,11 @@ public class Clientes {
         return nombre + " " + apellido;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -54,11 +54,11 @@ public class Clientes {
         this.email = email;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 

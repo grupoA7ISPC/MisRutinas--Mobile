@@ -1,4 +1,6 @@
 package com.cdp.misrutinas.adaptadores;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cdp.misrutinas.MainActivity;
 import com.cdp.misrutinas.R;
+import com.cdp.misrutinas.RegistroActivity;
+import com.cdp.misrutinas.VerSocioActivity;
 import com.cdp.misrutinas.entidades.Clientes;
 
 import java.util.ArrayList;
@@ -41,6 +46,18 @@ public class ListaSociosAdapter extends RecyclerView.Adapter<ListaSociosAdapter.
             super(itemView);
 
             cardSocioName = itemView.findViewById(R.id.cardSocioName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent=new Intent(context, VerSocioActivity.class);
+                    intent.putExtra("ID",listaSocios.get(getAdapterPosition()).getId());
+                    context.startActivity(intent);
+
+
+                }
+            });
         }
     }
 }

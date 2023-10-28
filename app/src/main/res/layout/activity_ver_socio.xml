@@ -8,39 +8,26 @@
     android:orientation="vertical"
     android:clipChildren="true"
     android:padding="16dp"
-    tools:context=".EditarSocioActivity">
+    tools:context=".VerSocioActivity">
 
     <ImageView
-        android:id="@+id/volver_editar_socio"
+        android:id="@+id/volverListaSocios"
         android:layout_width="16.03dp"
         android:layout_height="23dp"
         android:layout_marginTop="21dp"
-        android:onClick="btnVolverEditarSocio"
-        android:src="@mipmap/flecha_volver"
-         />
+        android:onClick="volverListaClase"
+        android:src="@mipmap/flecha_volver" />
 
     <TextView
-        android:id="@+id/textViewEditarSocio"
+        android:id="@+id/textNombreApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/h1EditarSocio"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-         />
-
-    <TextView
-        android:id="@+id/textViewSocio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Horacio Quiroga"
+        android:text=""
         android:textColor="@color/verdeSocios"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        />
-
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:id="@+id/labelNombre"
@@ -56,16 +43,15 @@
         android:id="@+id/textNombre"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:ems="10"
-        android:textAlignment="center"
         android:layout_marginBottom="20dp"
-        android:hint="Horacio"
-        android:textColorHint="@color/black"
-        android:inputType="text"
-        android:visibility="visible"
         android:background="@drawable/input_generico"
-        android:maxLength="45"
-        />
+        android:ems="10"
+        android:hint=""
+        android:text=""
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/labelApellido"
@@ -82,14 +68,15 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="Quiroga"
+        android:hint=""
+        android:text=""
         android:textColorHint="@color/black"
         android:inputType="text"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
         android:layout_marginBottom="20dp"
-        android:maxLength="45"/>
+        />
 
     <TextView
         android:id="@+id/labelDNI"
@@ -106,14 +93,15 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="12345678"
+        android:hint=""
+        android:text=""
         android:textColorHint="@color/black"
         android:inputType="number"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
         android:layout_marginBottom="20dp"
-        android:maxLength="8"/>
+        />
 
     <TextView
         android:id="@+id/labelEmail"
@@ -129,14 +117,15 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="@string/inputCorreo"
+        android:hint=""
+        android:text=""
         android:textColorHint="@color/black"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
         android:layout_marginBottom="20dp"
-        android:maxLength="10"/>
+        />
 
     <TextView
         android:id="@+id/labelTelefono"
@@ -153,17 +142,18 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="0123456789"
+        android:hint=""
+        android:text=""
         android:textColorHint="@color/black"
         android:inputType="phone"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
         android:layout_marginBottom="20dp"
-        android:maxLength="10"/>
+        />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnEditar"
         android:layout_width="match_parent"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
@@ -171,18 +161,18 @@
         android:layout_marginTop="16dp"
         android:layout_height="40dp"
         android:background="@drawable/button_primary"
-        android:text="@string/btnGuardar"
+        android:text="@string/editBtnDefault"
         app:backgroundTint="@null" />
 
     <Button
-        android:id="@+id/btnCancelar"
+        android:id="@+id/btnEliminar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:textColor="@color/background"
         android:background="@drawable/button_secondary"
-        android:text="@string/btnCancelar"
+        android:text="@string/deleteBtn"
         app:backgroundTint="@null" />
 
 </LinearLayout>
