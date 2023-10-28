@@ -40,6 +40,8 @@ public class CrearSocioActivity extends AppCompatActivity {
 
         crud = new CrudCliente(this);
 
+
+
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,10 +54,10 @@ public class CrearSocioActivity extends AppCompatActivity {
                 long id = crud.insertarCliente(nombre, apellido, dni, email, telefono, idRol);
 
                 if (id != -1) {
-                    textoResultado.setText("Registro insertado con ID: " + id);
+                    textoResultado.setText("¡Socio creado con exito! (ID: " + id+")");
                     irListaSocios();
                 } else {
-                    textoResultado.setText("Error al insertar el registro.");
+                    textoResultado.setText("Error al crear nuevo socio");
                 }
             }
         });
@@ -70,4 +72,6 @@ public class CrearSocioActivity extends AppCompatActivity {
         Intent intent = new Intent(CrearSocioActivity.this, ListaSocioActivity.class);
         startActivity(intent);
     }
+
+
 }

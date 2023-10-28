@@ -133,13 +133,45 @@ public class CrudCliente extends MRSQLiteHelper{
     public long insertarCliente(String nombre, String apellido, String dni, String email, String telefono, int idRol) {
         SQLiteDatabase db = super.getWritableDatabase();
 
+        if (TextUtils.isEmpty(nombre) || TextUtils.isEmpty(apellido) || TextUtils.isEmpty(dni) || TextUtils.isEmpty(email) || TextUtils.isEmpty(telefono)) {
+            Toast.makeText(context, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+            db.close();
+            return -1;
+        }
+
         if (!areFieldsValid(
-                new FieldLengthValidation(nombre, 1, 45),
-                new FieldLengthValidation(apellido, 1, 45),
+                new FieldLengthValidation(nombre, 1, 25),
+                new FieldLengthValidation(apellido, 1, 25),
                 new FieldLengthValidation(dni, 8, 8),
-                new FieldLengthValidation(email, 8, 75),
+                new FieldLengthValidation(email, 8, 45),
                 new FieldLengthValidation(telefono, 10, 10)
-        ) || !isValidEmail(db, email)) {
+        )) {
+            if (nombre.length() < 1 || nombre.length() > 45) {
+                Toast.makeText(context, "Nombre debe tener entre 1 y 25 caracteres.", Toast.LENGTH_SHORT).show();
+            }
+
+            if (apellido.length() < 1 || apellido.length() > 45) {
+                Toast.makeText(context, "Apellido debe tener entre 1 y 25 caracteres.", Toast.LENGTH_SHORT).show();
+            }
+
+            if (dni.length() != 8) {
+                Toast.makeText(context, "DNI debe tener exactamente 8 caracteres.", Toast.LENGTH_SHORT).show();
+            }
+
+            if (email.length() < 8 || email.length() > 75) {
+                Toast.makeText(context, "Email debe tener entre 8 y 45 caracteres.",  Toast.LENGTH_SHORT).show();
+            }
+
+            if (telefono.length() != 10) {
+                Toast.makeText(context, "Teléfono debe tener exactamente 10 caracteres.",  Toast.LENGTH_SHORT).show();
+            }
+
+            db.close();
+            return -1;
+        }
+
+        if (!isValidEmail(db, email)) {
+            Toast.makeText(context, "El campo Email tiene un formato inválido o ya está en uso", Toast.LENGTH_SHORT).show();
             db.close();
             return -1;
         }
@@ -169,6 +201,7 @@ public class CrudCliente extends MRSQLiteHelper{
             return -1;
         }
     }
+
 
     public ArrayList<Clientes> listarClientes(int idRol){
         SQLiteDatabase db = super.getWritableDatabase();
