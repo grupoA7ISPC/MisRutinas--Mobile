@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,7 +30,6 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText textPassword;
 
     private Button btnInsertar;
-    private TextView textoResultado;
     private FirebaseAuth mAuth;
 
     @Override
@@ -43,7 +44,6 @@ public class RegistroActivity extends AppCompatActivity {
         textEmail = findViewById(R.id.textEmail);
         textPassword = findViewById(R.id.textPassword);
         btnInsertar = findViewById(R.id.btnInsertar);
-        textoResultado = findViewById(R.id.textoResultado);
 
         // Inicializa Firebase Authentication
         mAuth = FirebaseAuth.getInstance();
@@ -60,6 +60,11 @@ public class RegistroActivity extends AppCompatActivity {
                 final String apellido = textApellido.getText().toString();
                 final String dni = textDNI.getText().toString();
 
+                if (TextUtils.isEmpty(username) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(RegistroActivity.this, "Campos obligatorios incompletos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Registra al usuario en Firebase Authentication
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegistroActivity.this, new OnCompleteListener<AuthResult>() {
@@ -67,27 +72,31 @@ public class RegistroActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // El usuario se ha registrado con éxito en Firebase
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    // Realiza otras acciones en Firebase si es necesario
+                                    final FirebaseUser user = mAuth.getCurrentUser();
 
-                                    // Inserta los datos en tu base de datos local
                                     long id = crud.insertarUsuario(username, email, password, nombre, apellido, dni);
 
                                     if (id != -1) {
                                         // Registro exitoso en Firebase y en la base de datos local
-                                        textoResultado.setText("Registro exitoso. Usuario creado en Firebase y en la base de datos local.");
+                                        Toast.makeText(RegistroActivity.this, "¡Registro exitoso!", Toast.LENGTH_SHORT).show();
+                                        irLogin();
                                     } else {
                                         // Registro exitoso en Firebase, pero error en la base de datos local
-                                        textoResultado.setText("Registro exitoso en Firebase, pero error al insertar el registro en la base de datos local.");
+                                        Toast.makeText(RegistroActivity.this, "Registro exitoso en Firebase, pero error al insertar el registro en la base de datos local.", Toast.LENGTH_SHORT).show();
                                     }
                                 } else {
                                     // Si el registro falla en Firebase, muestra un mensaje de error
-                                    textoResultado.setText("Error al registrar el usuario en Firebase.");
+                                    Toast.makeText(RegistroActivity.this, "Error al registrar el usuario en Firebase.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
             }
         });
 
+    }
+
+    private void irLogin(){
+        Intent intent = new Intent(RegistroActivity.this, IniciarSesionActivity.class);
+        startActivity(intent);
     }
 }
