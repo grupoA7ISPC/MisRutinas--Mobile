@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.cdp.misrutinas.entidades.Clientes;
+import com.cdp.misrutinas.entidades.Usuario;
 
 import java.util.ArrayList;
 
@@ -122,6 +123,32 @@ public class CrudCliente extends MRSQLiteHelper{
             db.close();
             return -1;
         }
+    }
+
+    public Usuario getUsuariofromDB(String email) {
+        Usuario usuario = null;
+        SQLiteDatabase db = super.getWritableDatabase();
+
+        String query = "SELECT * FROM Usuario WHERE email = ?";
+        String[] selectionArgs = { email };
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                usuario = new Usuario();
+
+                // Retrieve data from the cursor
+                usuario.setEmail(email);
+                usuario.setPassword(cursor.getString(1));
+                usuario.setUsername(cursor.getString(7));
+                //"CREATE TABLE Usuario (id_usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username VARCHAR(20) UNIQUE , apellido VARCHAR(45), nombre VARCHAR(45), dni INTEGER,  email VARCHAR(75) NOT NULL,tel INTEGER, pass VARCHAR(16), active BOOLEAN, id_rol INTEGER, FOREIGN KEY (id_rol) REFERENCES Rol(id_rol))";
+            }
+
+            cursor.close();
+        }
+
+        return usuario;
     }
 
 
