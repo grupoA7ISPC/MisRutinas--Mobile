@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -15,6 +16,8 @@ import com.google.android.material.navigation.NavigationBarView;
 public class DashboardActivity extends AppCompatActivity {
 
     BottomNavigationView nav;
+    TextView textUsername;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,16 @@ public class DashboardActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav);
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnItemSelectedListener(this::onNavigationItemSelected);
+
+        textUsername = findViewById(R.id.textUsername);
+        Intent intent = getIntent();
+
+        if (intent.hasExtra("username")) {
+            String username = intent.getStringExtra("username");
+            textUsername.setText("@" + username);
+        } else {
+            textUsername.setText("de vuelta");
+        }
     }
 
     private boolean onNavigationItemSelected(MenuItem item) {

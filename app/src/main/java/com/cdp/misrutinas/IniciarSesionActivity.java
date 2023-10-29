@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.cdp.misrutinas.entidades.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,7 +54,8 @@ public class IniciarSesionActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
 
         db = new CrudCliente(this);
-        db.getUsuariofromDB(email);
+//        db.getUsuariofromDB(email);
+        Usuario usuario = db.getUsuariofromDB(email);
 
         if(!email.isEmpty() && !password.isEmpty()){
                 mAuth.signInWithEmailAndPassword(email, password)
@@ -62,7 +64,7 @@ public class IniciarSesionActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    showHome(task.getResult().getUser().getEmail());
+                                    showDashboard(usuario.getUsername());
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(IniciarSesionActivity.this, "Se ha producido un error al autenticar el usuario. Usuario inexistente y/o contraseña incorrecta",
@@ -76,9 +78,9 @@ public class IniciarSesionActivity extends AppCompatActivity {
         }
     }
 
-    private void showHome(String email) {
+    private void showDashboard(String username) {
         Intent intent = new Intent(this, DashboardActivity.class);
-        intent.putExtra("email", email);
+        intent.putExtra("username", username);
         startActivity(intent);
     }
 }

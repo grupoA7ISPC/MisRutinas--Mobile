@@ -150,7 +150,6 @@ public class CrudCliente extends MRSQLiteHelper{
             if (cursor.moveToFirst()) {
                 usuario = new Usuario();
 
-                // Retrieve data from the cursor
                 usuario.setEmail(email);
                 usuario.setPassword(cursor.getString(1));
                 usuario.setUsername(cursor.getString(7));
