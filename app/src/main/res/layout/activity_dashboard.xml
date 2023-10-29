@@ -111,14 +111,34 @@
 
         <TextView
             android:id="@+id/cardSocioTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="90dp"
-            android:text="Total de socios \n         120"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="92dp"
+            android:text="Total de Socios"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalSocios"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardSocioTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="194dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="145dp"
+            android:text="18"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
@@ -152,28 +172,40 @@
             android:paddingRight="1dp"
             app:srcCompat="@drawable/icono_sociosdash" />
 
+
         <TextView
             android:id="@+id/cardProfeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="60dp"
-            android:text="Total de Entrenadores \n                   4"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="54dp"
+            android:text="Total de Entrenadores"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-
+        <TextView
+            android:id="@+id/totalEntrenador"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardProfeTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="194dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="145dp"
+            android:text="18"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
-
-    <!--    <HorizontalScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@id/rlDashboardTotalEnt">-->
 
     <RelativeLayout
         android:id="@+id/rlDashboardCardClase"
@@ -206,14 +238,32 @@
 
         <TextView
             android:id="@+id/cardClasesTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="92dp"
+            android:text="Total de Clases"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalClases"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardClasesTextView"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="60dp"
-            android:text="Total de Clases \n                   8"
+            android:layout_marginStart="194dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="145dp"
+            android:text="18"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />

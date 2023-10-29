@@ -65,7 +65,7 @@
         android:ems="10"
         android:hint="Precio"
         android:textColorHint="@color/black"
-        android:inputType="text"
+        android:inputType="number"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
