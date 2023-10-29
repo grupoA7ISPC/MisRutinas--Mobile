@@ -65,31 +65,35 @@ public class RegistroActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Registra al usuario en Firebase Authentication
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(RegistroActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // El usuario se ha registrado con éxito en Firebase
-                                    final FirebaseUser user = mAuth.getCurrentUser();
+                boolean validUser = crud.isValidUser(username, email, password, nombre, apellido, dni);
 
-                                    long id = crud.insertarUsuario(username, email, password, nombre, apellido, dni);
+                if (validUser) {
+                    // Registra al usuario en Firebase Authentication
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(RegistroActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // El usuario se ha registrado con éxito en Firebase
+                                        final FirebaseUser user = mAuth.getCurrentUser();
 
-                                    if (id != -1) {
-                                        // Registro exitoso en Firebase y en la base de datos local
-                                        Toast.makeText(RegistroActivity.this, "¡Registro exitoso!", Toast.LENGTH_SHORT).show();
-                                        irLogin();
+                                        long id = crud.insertarUsuario(username, email, password, nombre, apellido, dni);
+
+                                        if (id != -1) {
+                                            // Registro exitoso en Firebase y en la base de datos local
+                                            Toast.makeText(RegistroActivity.this, "¡Registro exitoso!", Toast.LENGTH_SHORT).show();
+                                            irLogin();
+                                        } else {
+                                            // Registro exitoso en Firebase, pero error en la base de datos local
+                                            Toast.makeText(RegistroActivity.this, "Registro exitoso en Firebase, pero error al insertar el registro en la base de datos local.", Toast.LENGTH_SHORT).show();
+                                        }
                                     } else {
-                                        // Registro exitoso en Firebase, pero error en la base de datos local
-                                        Toast.makeText(RegistroActivity.this, "Registro exitoso en Firebase, pero error al insertar el registro en la base de datos local.", Toast.LENGTH_SHORT).show();
+                                        // Si el registro falla en Firebase, muestra un mensaje de error
+                                        Toast.makeText(RegistroActivity.this, "Error al registrar el usuario en Firebase.", Toast.LENGTH_SHORT).show();
                                     }
-                                } else {
-                                    // Si el registro falla en Firebase, muestra un mensaje de error
-                                    Toast.makeText(RegistroActivity.this, "Error al registrar el usuario en Firebase.", Toast.LENGTH_SHORT).show();
                                 }
-                            }
-                        });
+                            });
+                }
             }
         });
 
