@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.cdp.misrutinas.entidades.Clientes;
+import com.cdp.misrutinas.entidades.Usuario;
 
 import java.util.ArrayList;
 
@@ -58,12 +59,13 @@ public class CrudCliente extends MRSQLiteHelper{
 
     //------------------------------------
     //"CREATE TABLE Usuario (id_usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username VARCHAR(20) UNIQUE , apellido VARCHAR(45), nombre VARCHAR(45), dni INTEGER,  email VARCHAR(75) NOT NULL,tel INTEGER, pass VARCHAR(16), active BOOLEAN, id_rol INTEGER, FOREIGN KEY (id_rol) REFERENCES Rol(id_rol))";
-    public long insertarUsuario(String username, String email, String password, String nombre, String apellido, String dni) {
+    public boolean isValidUser(String username, String email, String password, String nombre, String apellido, String dni) {
         SQLiteDatabase db = super.getWritableDatabase();
+
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-            Toast.makeText(context, "Los campos Username,Email y Contraseña son  obligatorios." , Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Los campos Username, Email y Contraseña son obligatorios." , Toast.LENGTH_SHORT).show();
             db.close();
-            return -1;
+            return false;
         }
 
         if (!areFieldsValid(
@@ -84,44 +86,81 @@ public class CrudCliente extends MRSQLiteHelper{
             }
 
             db.close();
-            return -1;
+            return false;
         }
         if (!isValidEmail(db, email)) {
             Toast.makeText(context, "El campo Email tiene un formato inválido o ya esta en uso", Toast.LENGTH_SHORT).show();
             db.close();
-            return -1;
+            return false;
         }
 
         if (existeRegistro(db, username, "username")) {
             Toast.makeText(context, "El nombre de usuario ya existe.", Toast.LENGTH_SHORT).show();
             db.close();
-            return -1;
+            return false;
         }
 
-        try {
-            ContentValues values = new ContentValues();
-            values.put("username", username); // NOT NULL
-            values.put("email", email); // NOT NULL
-            values.put("pass", password); // NOT NULL
-            values.put("nombre", nombre); // NULL
-            values.put("apellido", apellido); // NULL
-            values.put("dni", dni); // NULL
-            values.put("id_rol", 1); // NOT NULL
+        return true;
+    }
 
-            long idUsuario = db.insert("Usuario", null, values);
+    public long insertarUsuario(String username, String email, String password, String nombre, String apellido, String dni) {
+        SQLiteDatabase db = super.getWritableDatabase();
 
-            if (idUsuario != -1) {
-                db.close();
-                return idUsuario;
-            } else {
+        if (isValidUser(username, email, password, nombre, apellido, dni)) {
+            try {
+                ContentValues values = new ContentValues();
+                values.put("username", username); // NOT NULL
+                values.put("email", email); // NOT NULL
+                values.put("pass", password); // NOT NULL
+                values.put("nombre", nombre); // NULL
+                values.put("apellido", apellido); // NULL
+                values.put("dni", dni); // NULL
+                values.put("id_rol", 1); // NOT NULL
+
+                long idUsuario = db.insert("Usuario", null, values);
+
+                if (idUsuario != -1) {
+                    db.close();
+                    return idUsuario;
+                } else {
+                    db.close();
+                    return -1;
+                }
+            } catch (Exception e) {
+                Toast.makeText(context, "Error al insertar el registro.", Toast.LENGTH_SHORT).show();
                 db.close();
                 return -1;
             }
-        } catch (Exception e) {
-            Toast.makeText(context, "Error al insertar el registro.", Toast.LENGTH_SHORT).show();
+        } else {
             db.close();
             return -1;
         }
+    }
+
+    public Usuario getUsuariofromDB(String email) {
+        Usuario usuario = null;
+        SQLiteDatabase db = super.getWritableDatabase();
+
+        String query = "SELECT * FROM Usuario WHERE email = ?";
+        String[] selectionArgs = { email };
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                usuario = new Usuario();
+
+                // Retrieve data from the cursor
+                usuario.setEmail(email);
+                usuario.setPassword(cursor.getString(1));
+                usuario.setUsername(cursor.getString(7));
+                //"CREATE TABLE Usuario (id_usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username VARCHAR(20) UNIQUE , apellido VARCHAR(45), nombre VARCHAR(45), dni INTEGER,  email VARCHAR(75) NOT NULL,tel INTEGER, pass VARCHAR(16), active BOOLEAN, id_rol INTEGER, FOREIGN KEY (id_rol) REFERENCES Rol(id_rol))";
+            }
+
+            cursor.close();
+        }
+
+        return usuario;
     }
 
 

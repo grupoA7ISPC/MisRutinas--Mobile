@@ -26,7 +26,6 @@
         android:layout_marginLeft="115dp"
         android:layout_marginTop="291dp"
         android:background="@drawable/button_primary"
-        android:onClick="btnIngresar"
         android:text="Ingresar"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -52,15 +51,15 @@
     <!-- Nombre -->
 
     <EditText
-        android:id="@+id/editTextUsuario"
+        android:id="@+id/editTextCorreo"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:clipToOutline="true"
         android:ems="10"
-        android:hint="@string/inputUsuario"
-        android:inputType="text"
+        android:hint="@string/inputCorreo"
+        android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:visibility="visible"
         android:background="@drawable/input_generico"
@@ -70,7 +69,7 @@
  />
 
     <EditText
-        android:id="@+id/editTextContraseña"
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
