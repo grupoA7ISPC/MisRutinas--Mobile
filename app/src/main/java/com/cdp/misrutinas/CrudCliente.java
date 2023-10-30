@@ -152,8 +152,8 @@ public class CrudCliente extends MRSQLiteHelper{
 
                 // Retrieve data from the cursor
                 usuario.setEmail(email);
-                usuario.setPassword(cursor.getString(1));
-                usuario.setUsername(cursor.getString(7));
+                usuario.setPassword(cursor.getString(7));
+                usuario.setUsername(cursor.getString(1));
                 //"CREATE TABLE Usuario (id_usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username VARCHAR(20) UNIQUE , apellido VARCHAR(45), nombre VARCHAR(45), dni INTEGER,  email VARCHAR(75) NOT NULL,tel INTEGER, pass VARCHAR(16), active BOOLEAN, id_rol INTEGER, FOREIGN KEY (id_rol) REFERENCES Rol(id_rol))";
             }
 

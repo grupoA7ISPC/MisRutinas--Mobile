@@ -17,6 +17,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class DashboardActivity extends AppCompatActivity {
 
+    TextView textUsername;
+
     BottomNavigationView nav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,17 @@ public class DashboardActivity extends AppCompatActivity {
         TextView tvClases = findViewById (R.id.totalClases);
         TextView tvEntrenadores = findViewById (R.id.totalEntrenador);
         TextView tvSocios = findViewById (R.id.totalSocios);
+        textUsername = findViewById(R.id.textUsername);
+
+
+        Intent intent = getIntent();
+
+        if (intent.hasExtra("username")) {
+            String username = intent.getStringExtra("username");
+            textUsername.setText("@" + username);
+        } else {
+            textUsername.setText("de vuelta");
+        }
 
 
         // Total Clases
