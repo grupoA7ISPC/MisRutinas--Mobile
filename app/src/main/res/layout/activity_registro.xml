@@ -116,13 +116,4 @@
         android:onClick="btnRegistro"
         android:layout_marginTop="20dp"
         app:backgroundTint="@null" />
-
-<!--    Temporal-->
-    <TextView
-        android:id="@+id/textoResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:text="" />
 </LinearLayout>
